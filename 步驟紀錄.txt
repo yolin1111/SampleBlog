@@ -1,0 +1,32 @@
+EF Code First
+
+dotnet new webapi -n SampleBlog
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+
+Models
+    Blog.cs
+    Post.cs
+    BlogContext.cs
+
+資料庫結構 
+Blog..1 -> Post..Many
+
+dotnet ef migrations add init
+dotnet ef database update  -v
+
+使用 EF 建立 BlogController 與 ValuesController(範例可刪除)
+建立測試資料
+SELECT * FROM Blogs
+SELECT * FROM Posts
+
+INSERT INTO Blogs(Url,Rating)Values('www.itlife1.com','90')
+INSERT INTO Blogs(Url,Rating)Values('www.itlife2.com','80')
+INSERT INTO Blogs(Url,Rating)Values('www.itlife3.com','50')
+
+INSERT INTO Posts(Title,Content,BlogId)Values('How to Sport','Sport',1)
+INSERT INTO Posts(Title,Content,BlogId)Values('How to open Bank Account','Stock',1)
+INSERT INTO Posts(Title,Content,BlogId)Values('RunRunRun','Music',2)
+INSERT INTO Posts(Title,Content,BlogId)Values('GoGOGO','Music',2)
