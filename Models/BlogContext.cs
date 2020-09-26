@@ -4,6 +4,7 @@ namespace SampleBlog.Models
 {
     public class BlogContext : DbContext
     {
+
         public BlogContext() { }
         public BlogContext(DbContextOptions<BlogContext> options) : base(options) { }
 
@@ -15,17 +16,6 @@ namespace SampleBlog.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Add the shadow property to the model
-            modelBuilder.Entity<Post>()
-                .Property<int>("FK_Posts_Blogs_BlogId");
 
-            // Use the shadow property as a foreign key
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.Blogs)
-                .WithMany(b => b.Posts)
-                .HasForeignKey("FK_Posts_Blogs_BlogId");
-        }
     }
 }

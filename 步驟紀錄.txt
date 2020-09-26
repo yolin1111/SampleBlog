@@ -42,16 +42,16 @@ C
     }
 
     {
-        "url": "www.itlife6.com",
+        "url": "www.newBlog.com",
         "rating": 2200,
         "posts": [
             {
-                "title": "How to Sport",
-                "content": "Sport",
+                "title": "new1",
+                "content": "Sport"
             },
             {
-                "title": "How to open Bank Account",
-                "content": "Stock",
+                "title": "new2",
+                "content": "Stock"
             }
         ]
     }
@@ -62,21 +62,17 @@ U
         "url": "www.itlife3.com",
         "rating": 100
     }
-    PUT https://Localhost:5001/api/Blogs/4
-    {
-        "blogId": 4,
-        "url": "www.itlife3.com",
-        "rating": 1,
+
+    PUT https://Localhost:5001/api/Blogs/17
+   {
+    "blogId": 18,
+    "url": "www.PUT.com",
+    "rating": 99,
         "posts": [
-            {
-                "title": "How to SportAAA",
-                "content": "SportAAA",
-                "blogId": 4
-            },
-            {
-                "title": "How to open Bank AccountBBB",
-                "content": "StockBBB",
-                "blogId": 4
+            {           
+                "title": "How to SportA01",
+                "content": "SportA01",
+                "PostId" : 44
             }
         ]
     }
