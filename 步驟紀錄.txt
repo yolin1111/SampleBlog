@@ -4,6 +4,8 @@ dotnet new webapi -n SampleBlog
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+dotnet add package Microsoft.EntityFrameworkCore.Proxies
 
 
 Models
@@ -30,3 +32,57 @@ INSERT INTO Posts(Title,Content,BlogId)Values('How to Sport','Sport',1)
 INSERT INTO Posts(Title,Content,BlogId)Values('How to open Bank Account','Stock',1)
 INSERT INTO Posts(Title,Content,BlogId)Values('RunRunRun','Music',2)
 INSERT INTO Posts(Title,Content,BlogId)Values('GoGOGO','Music',2)
+
+
+C
+    POST https://Localhost:5001/api/Blogs
+    {
+        "url": "www.itlife4.com",
+        "rating": 21
+    }
+
+    {
+        "url": "www.itlife6.com",
+        "rating": 2200,
+        "posts": [
+            {
+                "title": "How to Sport",
+                "content": "Sport",
+            },
+            {
+                "title": "How to open Bank Account",
+                "content": "Stock",
+            }
+        ]
+    }
+U
+    PUT https://Localhost:5001/api/Blogs/4
+    {
+        "blogId": 4,
+        "url": "www.itlife3.com",
+        "rating": 100
+    }
+    PUT https://Localhost:5001/api/Blogs/4
+    {
+        "blogId": 4,
+        "url": "www.itlife3.com",
+        "rating": 1,
+        "posts": [
+            {
+                "title": "How to SportAAA",
+                "content": "SportAAA",
+                "blogId": 4
+            },
+            {
+                "title": "How to open Bank AccountBBB",
+                "content": "StockBBB",
+                "blogId": 4
+            }
+        ]
+    }
+
+R
+    GET https://Localhost:5001/api/Blogs
+    GET https://Localhost:5001/api/Blogs/1
+D
+    DELETE https://Localhost:5001/api/Blogs/1

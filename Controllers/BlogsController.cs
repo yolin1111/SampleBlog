@@ -24,14 +24,15 @@ namespace SampleBlog.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Blog>>> GetBlogs()
         {
-            return await _context.Blogs.ToListAsync();
+            return await _context.Blogs.Include(a => a.Posts).ToListAsync();
         }
 
         // GET: api/Blogs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Blog>> GetBlog(int id)
         {
-            var blog = await _context.Blogs.FindAsync(id);
+            // var blog = await _context.Blogs.FindAsync(id);
+            var blog = await _context.Blogs.Include(a => a.Posts).FirstOrDefaultAsync(x => x.BlogId == id);
 
             if (blog == null)
             {
@@ -47,6 +48,7 @@ namespace SampleBlog.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBlog(int id, Blog blog)
         {
+
             if (id != blog.BlogId)
             {
                 return BadRequest();
