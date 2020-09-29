@@ -9,7 +9,7 @@ using SampleBlog.Models;
 namespace SampleBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20200925150745_init")]
+    [Migration("20200929153022_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
