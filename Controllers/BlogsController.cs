@@ -19,15 +19,6 @@ namespace SampleBlog.Controllers
 
 
         private readonly ILogger _logger;
-        // private readonly TodoContext _context;
-
-        // public BlogsController(BlogContext context, ILogger<TodoItemsController> logger)
-        // {
-        //     _logger = logger;
-        //     _context = context;
-        // }
-
-
 
         public BlogsController(BlogContext context, ILogger<BlogsController> logger)
         {
