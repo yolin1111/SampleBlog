@@ -55,15 +55,15 @@ namespace SampleBlog.Controllers
             }
 
             _context.Entry(blog).State = EntityState.Modified;
+
+            //更新Blog and Post
             if (blog.Posts != null)
             {
                 foreach (object item in blog.Posts)
                 {
                     _context.Entry(item).State = EntityState.Modified;
                 }
-
             }
-
 
             try
             {
