@@ -31,6 +31,12 @@ namespace SampleBlog
             services.AddDbContext<BlogContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddLogging(builder =>
+            {
+                builder.AddConfiguration(Configuration.GetSection("Logging"))
+                    .AddConsole()
+                    .AddDebug();
+            });
             // services.AddControllers()
             // .AddNewtonsoftJson();
             // services.AddControllers()

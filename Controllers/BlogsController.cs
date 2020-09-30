@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SampleBlog.Models;
 
 namespace SampleBlog.Controllers
@@ -13,10 +14,24 @@ namespace SampleBlog.Controllers
     [ApiController]
     public class BlogsController : ControllerBase
     {
+
         private readonly BlogContext _context;
 
-        public BlogsController(BlogContext context)
+
+        private readonly ILogger _logger;
+        // private readonly TodoContext _context;
+
+        // public BlogsController(BlogContext context, ILogger<TodoItemsController> logger)
+        // {
+        //     _logger = logger;
+        //     _context = context;
+        // }
+
+
+
+        public BlogsController(BlogContext context, ILogger<BlogsController> logger)
         {
+            _logger = logger;
             _context = context;
         }
 
@@ -48,7 +63,7 @@ namespace SampleBlog.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBlog(int id, Blog blog)
         {
-
+            _logger.LogInformation("輸入的參數: {id}", id);
             if (id != blog.BlogId)
             {
                 return BadRequest();
