@@ -24,7 +24,7 @@ namespace SampleBlog.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Login(Login login)
         {
-            //TODO 呼叫市府SSO，需要申請，webservice wsdl
+            //TODO: 呼叫市府SSO，需要申請，webservice wsdl
             if (login.UserName == "Yulin" && login.PassWord == "1234")
             {
                 return Ok("登入成功");
