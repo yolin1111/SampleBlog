@@ -157,3 +157,12 @@ D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dl
 D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
 D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+D:\Projects\SampleBlog\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+D:\Projects\SampleBlog\obj\Debug\netcoreapp3.1\SampleBlog.MvcApplicationPartsAssemblyInfo.cs

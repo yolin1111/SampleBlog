@@ -82,3 +82,22 @@ R
     GET https://Localhost:5001/api/Blogs/1
 D
     DELETE https://Localhost:5001/api/Blogs/1
+
+
+安裝 Swagger/OpenAPI
+https://blog.miniasp.com/post/2019/12/21/ASP%E2%80%A4NET-Core-3-NSwag-OpenAPI-v3
+dotnet add SampleBlog.csproj package NSwag.AspNetCore
+
+修改 Startup.cs > ConfigureServices
+// Register the Swagger services
+services.AddSwaggerDocument();
+
+修改 Startup.cs > Configure
+ // Register the Swagger generator and the Swagger UI middlewares
+    app.UseOpenApi();
+    app.UseSwaggerUi3();
+
+
+http://localhost:5000/swagger 以檢視 Swagger UI。
+http://localhost:5000/swagger/v1/swagger.json 以檢視 Swagger 規格。
+https://localhost:5001/redoc/
